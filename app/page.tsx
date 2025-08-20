@@ -1,5 +1,4 @@
-
-
+import type { Metadata } from "next";
 import Hero from "@/components/Hero";
 import SectionTitle from "@/components/SectionTitle";
 import ServiceCard from "@/components/ServiceCard";
@@ -8,25 +7,15 @@ import BlogCard from "@/components/BlogCard";
 import ContactForm from "@/components/ContactForm";
 import CTA from "@/components/CTA";
 import { Button } from "@/components/Button";
-import { motion } from "framer-motion";
-import { fadeInUp, stagger } from "@/lib/motion";
-import { Code, Layers, Smartphone, Rocket } from "lucide-react";
 import Image from "next/image";
-import { Metadata } from "next";
-
+import { Code, Layers, Smartphone, Rocket } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "NexGen Solutions – Modern Web & App Development",
   description:
-    "We design and develop modern websites and mobile apps using React, Next.js, and Tailwind. Based in UAE, serving clients worldwide.",
-  openGraph: {
-    title: "NexGen Solutions – Modern Web & App Development",
-    description:
-      "We design and develop modern websites and mobile apps using React, Next.js, and Tailwind.",
-    url: "https://nexgen-solutions.com",
-    images: ["/og-image.png"]
-  }
+    "We design and develop modern websites and mobile apps using React, Next.js, and Tailwind. Based in UAE, serving clients worldwide."
 };
+
 export default function HomePage() {
   return (
     <>
@@ -40,47 +29,32 @@ export default function HomePage() {
             title="What we do"
             description="We craft fast, accessible, and scalable digital products."
           />
-
-          <motion.div
-            variants={stagger}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
-          >
-            <motion.div variants={fadeInUp}>
-              <ServiceCard
-                icon={<Code />}
-                title="Web Development"
-                description="Next.js, React, Tailwind CSS for blazing-fast websites."
-                cta={<Button variant="ghost" href="/services">Learn more</Button>}
-              />
-            </motion.div>
-            <motion.div variants={fadeInUp}>
-              <ServiceCard
-                icon={<Layers />}
-                title="UI Engineering"
-                description="Reusable component libraries with accessibility in mind."
-                cta={<Button variant="ghost" href="/services#ui">Learn more</Button>}
-              />
-            </motion.div>
-            <motion.div variants={fadeInUp}>
-              <ServiceCard
-                icon={<Smartphone />}
-                title="Responsive Design"
-                description="Mobile-first layouts that look great on any device."
-                cta={<Button variant="ghost" href="/services#responsive">Learn more</Button>}
-              />
-            </motion.div>
-            <motion.div variants={fadeInUp}>
-              <ServiceCard
-                icon={<Rocket />}
-                title="Performance"
-                description="Core Web Vitals focused builds and optimization."
-                cta={<Button variant="ghost" href="/services#perf">Learn more</Button>}
-              />
-            </motion.div>
-          </motion.div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <ServiceCard
+              icon={<Code />}
+              title="Web Development"
+              description="Next.js, React, Tailwind CSS for blazing-fast websites."
+              cta={<Button variant="ghost" href="/services">Learn more</Button>}
+            />
+            <ServiceCard
+              icon={<Layers />}
+              title="UI Engineering"
+              description="Reusable component libraries with accessibility in mind."
+              cta={<Button variant="ghost" href="/services#ui">Learn more</Button>}
+            />
+            <ServiceCard
+              icon={<Smartphone />}
+              title="Responsive Design"
+              description="Mobile-first layouts that look great on any device."
+              cta={<Button variant="ghost" href="/services#responsive">Learn more</Button>}
+            />
+            <ServiceCard
+              icon={<Rocket />}
+              title="Performance"
+              description="Core Web Vitals focused builds and optimization."
+              cta={<Button variant="ghost" href="/services#perf">Learn more</Button>}
+            />
+          </div>
         </div>
       </section>
 
@@ -92,23 +66,11 @@ export default function HomePage() {
             title="Selected work"
             description="A quick look at projects we’ve delivered."
           />
-          <motion.div
-            variants={stagger}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
-          >
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[1,2,3,4,5,6].map((i) => (
-              <motion.div key={i} variants={fadeInUp}>
-                <PortfolioCard
-                  title={`Project ${i}`}
-                  image={`/portfolio/p${i}.svg`}
-                  href="/portfolio"
-                />
-              </motion.div>
+              <PortfolioCard key={i} title={`Project ${i}`} image={`/portfolio/p${i}.svg`} href="/portfolio" />
             ))}
-          </motion.div>
+          </div>
         </div>
       </section>
 
