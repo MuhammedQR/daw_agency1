@@ -11,21 +11,21 @@ import { motion } from "framer-motion";
 import { fadeInUp, stagger } from "@/lib/motion";
 import { Code, Layers, Smartphone, Rocket } from "lucide-react";
 import Image from "next/image";
-// import { Metadata } from "next";
+import { Metadata } from "next";
 
 
-// export const metadata: Metadata = {
-//   title: "NexGen Solutions – Modern Web & App Development",
-//   description:
-//     "We design and develop modern websites and mobile apps using React, Next.js, and Tailwind. Based in UAE, serving clients worldwide.",
-//   openGraph: {
-//     title: "NexGen Solutions – Modern Web & App Development",
-//     description:
-//       "We design and develop modern websites and mobile apps using React, Next.js, and Tailwind.",
-//     url: "https://nexgen-solutions.com",
-//     images: ["/og-image.png"]
-//   }
-// };
+export const metadata: Metadata = {
+  title: "NexGen Solutions – Modern Web & App Development",
+  description:
+    "We design and develop modern websites and mobile apps using React, Next.js, and Tailwind. Based in UAE, serving clients worldwide.",
+  openGraph: {
+    title: "NexGen Solutions – Modern Web & App Development",
+    description:
+      "We design and develop modern websites and mobile apps using React, Next.js, and Tailwind.",
+    url: "https://nexgen-solutions.com",
+    images: ["/og-image.png"]
+  }
+};
 export default function HomePage() {
   return (
     <>
