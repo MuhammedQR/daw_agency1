@@ -13,7 +13,6 @@ import { Code, Layers, Smartphone, Rocket } from "lucide-react";
 import Image from "next/image";
 import { Metadata } from "next";
 
-
 export const metadata: Metadata = {
   title: "NexGen Solutions – Modern Web & App Development",
   description:
